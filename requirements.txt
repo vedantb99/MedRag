@@ -1,0 +1,22 @@
+langgraph>=0.1.0
+
+torch>=2.1.0
+transformers>=4.40.0
+sentence-transformers>=2.5.0
+
+# Vision and multimodal dependencies
+open_clip_torch>=2.20.0
+Pillow>=10.0.0
+timm>=0.9.0
+
+# Re-ranking dependencies (optional but recommended)
+# colbert-ai>=0.2.0  # For ColBERT re-ranking (complex setup)
+# Note: Our implementation uses Bio-E5 for ColBERT-style late interaction
+
+# For potential FAISS-based hybrid retrieval (optional)
+# faiss-gpu>=1.7.2  # Use this if you have CUDA
+# faiss-cpu>=1.7.2  # Use this for CPU-only
+
+requests>=2.31.0
+numpy>=1.24.0
+pyyaml>=6.0.0

@@ -1,0 +1,4 @@
+hardware:
+  name: "RTX 3090"
+  vram_gb: 24
+  notes: "Use this GPU for retrieval and smaller models."

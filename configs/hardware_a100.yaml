@@ -1,0 +1,4 @@
+hardware:
+  name: "NVIDIA A100"
+  vram_gb: 80
+  notes: "Run Qwen2-72B and MedGemma here via vLLM."

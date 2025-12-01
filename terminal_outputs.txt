@@ -1,0 +1,294 @@
+During task with name 'SVA' and id 'c4023451-c16e-acab-e33d-1559a4148c7b'
+(.venv) (base) vedantb@GameTheory:~/MedRag-main$ python main.py --clinical_query "65-year-old male with shortness of breath and fever" --image_path "data/test_xray.png"
+--- RUNNING VISION AGENT (VA) ---
+Vision Agent: Loading BiomedCLIP model on cuda...
+Vision Agent: BiomedCLIP loaded successfully
+VA: Successfully extracted image embeddings (shape: torch.Size([1, 512]))
+--- RUNNING RETRIEVAL AGENT (RA) ---
+RA: loading dense retrieval model intfloat/e5-base-v2 on cpu...
+RA: loading corpus from data/knowledge_base.jsonl...
+RA: retrieved 8 documents.
+--- (REAL) RUNNING GENERATION AGENT (GA) ---
+GA Generated Report (Pass 0): 65-year-old male presenting with shortness of breath and fever. Given the patient's age and symptoms, consider community-acquired pneumonia as a primary diagnosis. Risk stratification using CURB-65 score is recommended to determine the need for hospitalization. Further evaluation may include chest X-ray to assess for pneumonia, and consideration of other etiologies such as pulmonary embolism, heart failure, or COPD exacerbation.
+--- RUNNING SAFETY-VALIDATION AGENT (SVA) ---
+SVA: loading Bio_ClinicalBERT encoder...
+--- SVA PASSED (all sentences sufficiently supported) ---
+
+================ MEDRAG FINAL REPORT ================
+
+65-year-old male presenting with shortness of breath and fever. Given the patient's age and symptoms, consider community-acquired pneumonia as a primary diagnosis. Risk stratification using CURB-65 score is recommended to determine the need for hospitalization. Further evaluation may include chest X-ray to assess for pneumonia, and consideration of other etiologies such as pulmonary embolism, heart failure, or COPD exacerbation.
+
+=====================================================
+
+--- Debug information ---
+Refinement count: 0
+# Retrieved docs: 8
+(.venv) (base) vedantb@GameTheory:~/MedRag-main$ python main.py --clinical_query "Elderly patient with hemoptysis and weight loss, smoker for 30 years" --image_path "data/test_xray.png"
+--- RUNNING VISION AGENT (VA) ---
+Vision Agent: Loading BiomedCLIP model on cuda...
+Vision Agent: BiomedCLIP loaded successfully
+VA: Successfully extracted image embeddings (shape: torch.Size([1, 512]))
+--- RUNNING RETRIEVAL AGENT (RA) ---
+RA: loading dense retrieval model intfloat/e5-base-v2 on cpu...
+RA: loading corpus from data/knowledge_base.jsonl...
+RA: retrieved 8 documents.
+--- (REAL) RUNNING GENERATION AGENT (GA) ---
+GA Generated Report (Pass 0): The patient presents with hemoptysis and weight loss. Given the patient's age, smoking history, and symptoms, pulmonary pathology such as tuberculosis, lung cancer, or pulmonary embolism should be considered. Further evaluation, including bronchoscopy, may be warranted.
+--- RUNNING SAFETY-VALIDATION AGENT (SVA) ---
+SVA: loading Bio_ClinicalBERT encoder...
+--- SVA PASSED (all sentences sufficiently supported) ---
+
+================ MEDRAG FINAL REPORT ================
+
+The patient presents with hemoptysis and weight loss. Given the patient's age, smoking history, and symptoms, pulmonary pathology such as tuberculosis, lung cancer, or pulmonary embolism should be considered. Further evaluation, including bronchoscopy, may be warranted.
+
+=====================================================
+
+--- Debug information ---
+Refinement count: 0
+# Retrieved docs: 8
+(.venv) (base) vedantb@GameTheory:~/MedRag-main$ python main.py --clinical_query "Patient with hemoptysis and cavitary lesion"
+WARNING: ColBERT not available. Install with: pip install colbert-ai
+--- RUNNING VISION AGENT (VA) ---
+VA: No image path provided, skipping vision processing.
+--- RUNNING RETRIEVAL AGENT (RA) ---
+RA: loading dense retrieval model intfloat/e5-base-v2 on cpu...
+RA: loading corpus from data/knowledge_base.jsonl...
+RA: Re-ranking top 20 candidates with ColBERT-style scoring...
+RA: retrieved 8 documents (with re-ranking).
+--- (REAL) RUNNING GENERATION AGENT (GA) ---
+GA Generated Report (Pass 0): The patient has a cavitary lesion in the left upper lobe with thick irregular walls. Differential includes necrotizing infection (tuberculosis, fungal) or cavitary malignancy.
+--- RUNNING SAFETY-VALIDATION AGENT (SVA) ---
+SVA: loading Bio_ClinicalBERT encoder...
+--- SVA PASSED (all sentences sufficiently supported) ---
+
+================ MEDRAG FINAL REPORT ================
+
+The patient has a cavitary lesion in the left upper lobe with thick irregular walls. Differential includes necrotizing infection (tuberculosis, fungal) or cavitary malignancy.
+
+=====================================================
+
+--- Debug information ---
+Refinement count: 0
+# Retrieved docs: 8
+(.venv) (base) vedantb@GameTheory:~/MedRag-main$ python main.py --clinical_query "Elderly patient with dyspnea, bilateral crackles, and enlarged heart on exam"
+WARNING: ColBERT not available. Install with: pip install colbert-ai
+--- RUNNING VISION AGENT (VA) ---
+VA: No image path provided, skipping vision processing.
+--- RUNNING RETRIEVAL AGENT (RA) ---
+RA: loading dense retrieval model intfloat/e5-base-v2 on cpu...
+RA: loading corpus from data/knowledge_base.jsonl...
+RA: Re-ranking top 20 candidates with ColBERT-style scoring...
+RA: retrieved 8 documents (with re-ranking).
+--- (REAL) RUNNING GENERATION AGENT (GA) ---
+GA Generated Report (Pass 0): The patient presents with dyspnea, bilateral crackles, and an enlarged cardiac silhouette. These findings are consistent with pulmonary edema, potentially secondary to cardiac decompensation.
+--- RUNNING SAFETY-VALIDATION AGENT (SVA) ---
+SVA: loading Bio_ClinicalBERT encoder...
+--- SVA PASSED (all sentences sufficiently supported) ---
+
+================ MEDRAG FINAL REPORT ================
+
+The patient presents with dyspnea, bilateral crackles, and an enlarged cardiac silhouette. These findings are consistent with pulmonary edema, potentially secondary to cardiac decompensation.
+
+=====================================================
+
+--- Debug information ---
+Refinement count: 0
+# Retrieved docs: 8
+(.venv) (base) vedantb@GameTheory:~/MedRag-main$ python main.py --clinical_query "45-year-old smoker with right upper lobe opacity, weight loss, and productive cough"
+WARNING: ColBERT not available. Install with: pip install colbert-ai
+--- RUNNING VISION AGENT (VA) ---
+VA: No image path provided, skipping vision processing.
+--- RUNNING RETRIEVAL AGENT (RA) ---
+RA: loading dense retrieval model intfloat/e5-base-v2 on cpu...
+RA: loading corpus from data/knowledge_base.jsonl...
+RA: Re-ranking top 20 candidates with ColBERT-style scoring...
+RA: retrieved 8 documents (with re-ranking).
+--- (REAL) RUNNING GENERATION AGENT (GA) ---
+GA Generated Report (Pass 0): 45-year-old smoker with right upper lobe opacity, weight loss, and productive cough.
+
+*   A well-defined nodule measuring approximately 2.5 cm is noted in the right upper lobe. Recommend CT chest for further characterization and to exclude malignancy.
+*   Weight loss and productive cough are concerning for underlying pathology, including malignancy.
+*   Tuberculosis should be considered in patients with chronic cough, weight loss, night sweats, and fever, particularly in endemic areas or immunocompromised patients.
+--- RUNNING SAFETY-VALIDATION AGENT (SVA) ---
+SVA: loading Bio_ClinicalBERT encoder...
+--- SVA PASSED (all sentences sufficiently supported) ---
+
+================ MEDRAG FINAL REPORT ================
+
+45-year-old smoker with right upper lobe opacity, weight loss, and productive cough.
+
+*   A well-defined nodule measuring approximately 2.5 cm is noted in the right upper lobe. Recommend CT chest for further characterization and to exclude malignancy.
+*   Weight loss and productive cough are concerning for underlying pathology, including malignancy.
+*   Tuberculosis should be considered in patients with chronic cough, weight loss, night sweats, and fever, particularly in endemic areas or immunocompromised patients.
+
+=====================================================
+
+--- Debug information ---
+Refinement count: 0
+# Retrieved docs: 8
+(.venv) (base) vedantb@GameTheory:~/MedRag-main$ cd /data1/home/vedantb/MedRag-main/data && wc -l medlineplus.jsonl && head -3 medlineplus.jsonl
+211 medlineplus.jsonl
+{"source": "medlineplus", "file": "covid.xml", "title": "<span class=\"qt0\">COVID</span>-19 (Coronavirus Disease 2019)", "text": "<span class=\"qt0\">COVID</span>-19 (Coronavirus Disease 2019)"}
+{"source": "medlineplus", "file": "covid.xml", "title": "<span class=\"qt0\">COVID</span>-19 (Coronavirus Disease 2019)", "text": "<p><span class=\"qt0\">COVID</span>-19 (coronavirus disease 2019) is an illness caused by a virus. This virus is a coronavirus called SARS-CoV-2. It spreads when a person who has the infection breathes out droplets and very small particles that contain the virus. On this page, you'll find links to resources on important issues such as symptoms, risks, and how you can protect yourself and your family.</p><p>We also have pages on:</p><ul><li><span class=\"qt0\">COVID</span>-19 testing</li><li><span class=\"qt0\">COVID</span>-19 vaccines</li><li>Post-<span class=\"qt0\">COVID</span> conditions (long <span class=\"qt0\">COVID</span>)</li></ul>"}
+{"source": "medlineplus", "file": "covid.xml", "title": "<span class=\"qt0\">COVID</span>-19 (Coronavirus Disease 2019)", "text": "<span class=\"qt0\">COVID</span>-19 (coronavirus disease 2019) is an illness caused by a virus. This virus is a coronavirus called SARS-CoV-2. It spreads when a person who has the infection  ..."}
+(.venv) (base) vedantb@GameTheory:~/MedRag-main/data$ cd /data1/home/vedantb/MedRag-main/data && wc -l pubmed.jsonl && head -3 pubmed.jsonl
+2584 pubmed.jsonl
+{"id": "41214609", "text": "Extracellular vesicles (EVs) are small lipid bilayer packages responsible for cellular communication. Increasing clinical and experimental evidence strongly links EVs to homeostasis and the pathogenesis of disease. In this review, we provide a brief overview of EVs and their biological significance in pulmonary disease. We outline the current challenges in diagnosis and treatment of lung diseases and discuss the rationale for exploring EVs as a novel therapeutic avenue. Beyond their biomarker potential, we outline the role and potential for therapeutic targeting of EVs in the pathogenesis of asthma, chronic obstructive pulmonary disease (COPD), lung cancer, and infectious diseases. We also explore the current literature on the use of stem cell derived EVs to drive lung repair and regeneration in inflammatory diseases. Lastly, we highlight challenges and limitations of the study of EVs in pulmonary disease and provide future perspectives with exciting opportunities for translation into therapy.", "source": "PubMed"}
+{"id": "41208218", "text": "Identifying preventable readmissions for healthcare systems facing significant financial strain from rehospitalizations is crucial. The Hospital score, recognized for its predictive power in diverse settings, has yet to be extensively validated in low-income countries, particularly amid the challenges posed by the COVID-19 pandemic. This study validates the Hospital score for predicting 30-day readmission in a tertiary private hospital in Southern Brazil, assessing its efficacy in a middle-income country context. We retrospectively analyzed adult medical discharges from Hospital Moinhos de Vento between January 2019 and December 2023. The study focus was evaluating the Hospital score's accuracy in forecasting 30-day readmissions, including a specific assessment of its performance among COVID-19 patients during the pandemic years. Data extraction from electronic health records facilitated a comprehensive analysis of score variables and patient outcomes. Among 69\u2009971 discharges, 2890 patients were readmitted within 30 days, marking a 4.3% readmission rate. The Hospital score demonstrated consistent predictive accuracy, with an overall score accuracy of 0.70 (95% CI: 0.66-0.73; p\u2009<\u20090.01) and 0.72 (95% CI: 0.64-0.75; p\u2009<\u20090.01) among COVID-19 patients. Notably, the pandemic did not significantly impact the score's predictive validity. The Hospital score remains a reliable predictor of 30-day readmissions in a tertiary hospital within a middle-income country, retaining its effectiveness amidst the COVID-19 pandemic. These findings underscore the score's potential as a universal tool for reducing preventable readmissions, highlighting its relevance across healthcare contexts.", "source": "PubMed"}
+{"id": "41137305", "text": "This study presents the first documented case suggesting a potential association between prepregnancy administration of 4 doses of mRNA corona virus disease-19 vaccine and the development of postpartum multi-organ nodules, including pulmonary micronodules and thyroid cysts. The purpose of this report is to delineate a clinical scenario involving 3 interrelated factors: vaccine-induced sustained immune activation, inadequately managed moderate anxiety during pregnancy, and significant lifestyle alterations such as a gluten- and dairy-free diet coupled with sleep deprivation. The significance of this case lies in its novel exposure profile and undocumented long-term implications, offering critical insights that may inform future reproductive health guidance and risk counseling.", "source": "PubMed"}
+(.venv) (base) vedantb@GameTheory:~/MedRag-main/data$ cd /data1/home/vedantb/MedRag-main/data && echo "=== PUBMED SAMPLES ===" && shuf -n 3 pubmed.jsonl | jq -r '.text' | head -c 500 && echo -e "\n\n=== MEDLINEPLUS SAMPLES ===" && shuf -n 3 medlineplus.jsonl | jq -r '.text' | head -c 500
+=== PUBMED SAMPLES ===
+In this case report, we present a patient who developed an acute pulmonary hernia on the 5th day after uniportal video-assisted thoracoscopic pulmonary surgery. A 57-year-old male patient developed an acute cough accompanied by high fever and reported pain at the left incision site.
+This study aimed to verify whether SLKF granules can significantly improve clinical symptoms, including fatigue, loss of appetite, cough, phlegm, and insomnia, in patients with convalescent COVID-19. For a comprehens
+
+=== MEDLINEPLUS SAMPLES ===
+<span class="qt0">COVID</span>-19 (coronavirus disease 2019) is an illness caused by a virus. This virus is a coronavirus called SARS-CoV-2. In the United States, there are several  ...
+What are <span class="qt0">heart</span> valve <span class="qt1">diseases</span>?<p><span class="qt0">Heart</span> valve <span class="qt1">disease</span> happens when one or more of your <span class="qt0">heart</span> valves don't work well.</p><p>Your <span class="qt0">heart</span> has four valves: the tricuspid,(.venv) (base) vedantb@GameTheory:~/MedRag-main/data$ cd /data1/home/vedantb/MedRag-main/data && mv knowledge_base.jsonl knowledge_base_backup.jsonl && rm medlineplus.jsonl && echo "✓ Deleted medlineplus.jsonl" && echo "✓ Backed up knowledge_base.jsonl → knowledge_base_backup.jsonl"
+✓ Deleted medlineplus.jsonl
+✓ Backed up knowledge_base.jsonl → knowledge_base_backup.jsonl
+(.venv) (base) vedantb@GameTheory:~/MedRag-main/data$ python main.py --clinical_query "Patient with pulmonary nodules and suspected lung cancer"
+python: can't open file '/data1/home/vedantb/MedRag-main/data/main.py': [Errno 2] No such file or directory
+(.venv) (base) vedantb@GameTheory:~/MedRag-main/data$ python main.py --clinical_query "Patient with pulmonary nodules and suspected lung cancer"
+python: can't open file '/data1/home/vedantb/MedRag-main/data/main.py': [Errno 2] No such file or directory
+(.venv) (base) vedantb@GameTheory:~/MedRag-main/data$ pwd && ls main.py
+/data1/home/vedantb/MedRag-main/data
+ls: cannot access 'main.py': No such file or directory
+(.venv) (base) vedantb@GameTheory:~/MedRag-main/data$ python main.py --clinical_query "Patient with pulmonary nodules and suspected lung cancer"
+python: can't open file '/data1/home/vedantb/MedRag-main/data/main.py': [Errno 2] No such file or directory
+(.venv) (base) vedantb@GameTheory:~/MedRag-main/data$ pwd && ls -la | head -20
+/data1/home/vedantb/MedRag-main/data
+total 1928
+drwxrwxr-x 2 vedantb vedantb    4096 Nov 29 19:07 .
+drwxrwxr-x 8 vedantb vedantb    4096 Nov 29 19:03 ..
+-rw-rw-r-- 1 vedantb vedantb    8022 Nov 29 18:49 knowledge_base_backup.jsonl
+-rw-rw-r-- 1 vedantb vedantb 1921340 Nov 29 19:05 pubmed.jsonl
+-rw-rw-r-- 1 vedantb vedantb    6556 Nov 29 19:03 RERANKING_ARCHITECTURE.md
+-rw-rw-r-- 1 vedantb vedantb   19779 Nov 29 18:47 test_xray.png
+-rw-rw-r-- 1 vedantb vedantb    2262 Nov 29 18:49 VISION_AGENT_TESTING.md
+(.venv) (base) vedantb@GameTheory:~/MedRag-main/data$ cd ../
+(.venv) (base) vedantb@GameTheory:~/MedRag-main$ cd data
+(.venv) (base) vedantb@GameTheory:~/MedRag-main/data$ cd .. && python main.py --clinical_query "Patient with pulmonary nodules and suspected lung cancer"
+WARNING: ColBERT not available. Install with: pip install colbert-ai
+--- RUNNING VISION AGENT (VA) ---
+VA: No image path provided, skipping vision processing.
+--- RUNNING RETRIEVAL AGENT (RA) ---
+RA: loading dense retrieval model intfloat/e5-base-v2 on cpu...
+RA: loading corpus from data/pubmed.jsonl...
+RA: Re-ranking top 20 candidates with ColBERT-style scoring...
+RA: retrieved 8 documents (with re-ranking).
+--- (REAL) RUNNING GENERATION AGENT (GA) ---
+GA Generated Report (Pass 0): The patient presented with a pulmonary nodule detected during a routine evaluation. The nodule was subsequently investigated with a chest CT scan. The CT scan revealed a nodule of 8 mm or greater. The nodule was found to be associated with known lung cancer risk factors. The patient underwent a left thyroidectomy and central group lymph node dissection. Pathological examination showed granulomatous inflammation with caseous necrosis in the thyroid gland, and diagnosed as tuberculosis. The patient had nonspecific clinical symptoms, no history of exposition, and no pulmonary involvement. Subsequently, the patient visited the tuberculosis specialist outpatient clinic for treatment.
+--- RUNNING SAFETY-VALIDATION AGENT (SVA) ---
+SVA: loading Bio_ClinicalBERT encoder...
+--- SVA PASSED (all sentences sufficiently supported) ---
+
+================ MEDRAG FINAL REPORT ================
+
+The patient presented with a pulmonary nodule detected during a routine evaluation. The nodule was subsequently investigated with a chest CT scan. The CT scan revealed a nodule of 8 mm or greater. The nodule was found to be associated with known lung cancer risk factors. The patient underwent a left thyroidectomy and central group lymph node dissection. Pathological examination showed granulomatous inflammation with caseous necrosis in the thyroid gland, and diagnosed as tuberculosis. The patient had nonspecific clinical symptoms, no history of exposition, and no pulmonary involvement. Subsequently, the patient visited the tuberculosis specialist outpatient clinic for treatment.
+
+=====================================================
+
+--- Debug information ---
+Refinement count: 0
+# Retrieved docs: 8
+(.venv) (base) vedantb@GameTheory:~/MedRag-main$ python main.py --clinical_query "Elderly patient with COVID-19 pneumonia and respiratory failure"
+WARNING: ColBERT not available. Install with: pip install colbert-ai
+--- RUNNING VISION AGENT (VA) ---
+VA: No image path provided, skipping vision processing.
+--- RUNNING RETRIEVAL AGENT (RA) ---
+RA: loading dense retrieval model intfloat/e5-base-v2 on cpu...
+RA: loading corpus from data/pubmed.jsonl...
+RA: Re-ranking top 20 candidates with ColBERT-style scoring...
+RA: retrieved 8 documents (with re-ranking).
+--- (REAL) RUNNING GENERATION AGENT (GA) ---
+GA Generated Report (Pass 0): The patient is an 83-year-old male with a history of cirrhosis who presented with respiratory failure. Chest imaging revealed a large right pleural effusion and ascites, with no evidence of lung infection on CT scan. The patient was intubated and mechanically ventilated, and a drainage tube was placed in the right pleural cavity. A methylene blue injection into the peritoneal cavity resulted in a blue appearance of the pleural fluid, suggesting a diaphragmatic rupture. The patient was diagnosed with hepatic pleural effusion, and a comprehensive treatment was initiated. Despite treatment, the pleural effusion repeatedly increased, ultimately leading to the patient's death 62 days after admission.
+--- RUNNING SAFETY-VALIDATION AGENT (SVA) ---
+SVA: loading Bio_ClinicalBERT encoder...
+--- SVA PASSED (all sentences sufficiently supported) ---
+
+================ MEDRAG FINAL REPORT ================
+
+The patient is an 83-year-old male with a history of cirrhosis who presented with respiratory failure. Chest imaging revealed a large right pleural effusion and ascites, with no evidence of lung infection on CT scan. The patient was intubated and mechanically ventilated, and a drainage tube was placed in the right pleural cavity. A methylene blue injection into the peritoneal cavity resulted in a blue appearance of the pleural fluid, suggesting a diaphragmatic rupture. The patient was diagnosed with hepatic pleural effusion, and a comprehensive treatment was initiated. Despite treatment, the pleural effusion repeatedly increased, ultimately leading to the patient's death 62 days after admission.
+
+=====================================================
+
+--- Debug information ---
+Refinement count: 0
+# Retrieved docs: 8
+(.venv) (base) vedantb@GameTheory:~/MedRag-main$ python main.py --clinical_query "Patient with chronic obstructive pulmonary disease exacerbation and dyspnea"
+WARNING: ColBERT not available. Install with: pip install colbert-ai
+--- RUNNING VISION AGENT (VA) ---
+VA: No image path provided, skipping vision processing.
+--- RUNNING RETRIEVAL AGENT (RA) ---
+RA: loading dense retrieval model intfloat/e5-base-v2 on cpu...
+RA: loading corpus from data/pubmed.jsonl...
+RA: Re-ranking top 20 candidates with ColBERT-style scoring...
+RA: retrieved 8 documents (with re-ranking).
+--- (REAL) RUNNING GENERATION AGENT (GA) ---
+GA Generated Report (Pass 0): The patient has a history of chronic obstructive pulmonary disease (COPD) and presents with dyspnea, suggesting a possible exacerbation.
+--- RUNNING SAFETY-VALIDATION AGENT (SVA) ---
+SVA: loading Bio_ClinicalBERT encoder...
+--- SVA PASSED (all sentences sufficiently supported) ---
+
+================ MEDRAG FINAL REPORT ================
+
+The patient has a history of chronic obstructive pulmonary disease (COPD) and presents with dyspnea, suggesting a possible exacerbation.
+
+=====================================================
+
+--- Debug information ---
+Refinement count: 0
+# Retrieved docs: 8
+(.venv) (base) vedantb@GameTheory:~/MedRag-main$ python main.py --clinical_query "Patient with chronic obstructive pulmonary disease exacerbation and dyspnea"
+WARNING: ColBERT not available. Install with: pip install colbert-ai
+--- RUNNING VISION AGENT (VA) ---
+VA: No image path provided, skipping vision processing.
+--- RUNNING RETRIEVAL AGENT (RA) ---
+RA: loading dense retrieval model intfloat/e5-base-v2 on cpu...
+RA: loading corpus from data/pubmed.jsonl...
+RA: Re-ranking top 20 candidates with ColBERT-style scoring...
+RA: retrieved 8 documents (with re-ranking).
+--- (REAL) RUNNING GENERATION AGENT (GA) ---
+GA Generated Report (Pass 0): The patient has a history of chronic obstructive pulmonary disease (COPD). The patient presents with dyspnea, which could be related to a COPD exacerbation.
+--- RUNNING SAFETY-VALIDATION AGENT (SVA) ---
+SVA: loading Bio_ClinicalBERT encoder...
+--- SVA PASSED (all sentences sufficiently supported) ---
+
+================ MEDRAG FINAL REPORT ================
+
+The patient has a history of chronic obstructive pulmonary disease (COPD). The patient presents with dyspnea, which could be related to a COPD exacerbation.
+
+=====================================================
+
+--- Debug information ---
+Refinement count: 0
+# Retrieved docs: 8
+(.venv) (base) vedantb@GameTheory:~/MedRag-main$ python main.py --clinical_query "Elderly patient with hemoptysis and weight loss, smoker for 30 years" --image_path "data/test_xray.png"
+WARNING: ColBERT not available. Install with: pip install colbert-ai
+--- RUNNING VISION AGENT (VA) ---
+Vision Agent: Loading BiomedCLIP model on cuda...
+WARNING: Failed to load BiomedCLIP: CUDA out of memory. Tried to allocate 90.00 MiB. GPU 0 has a total capacity of 23.56 GiB of which 82.75 MiB is free. Process 4049777 has 22.17 GiB memory in use. Process 4121026 has 666.00 MiB memory in use. Including non-PyTorch memory, this process has 636.00 MiB memory in use. Of the allocated memory 329.30 MiB is allocated by PyTorch, and 52.70 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+Vision Agent will be disabled for this run.
+VA: Failed to extract image embeddings
+--- RUNNING RETRIEVAL AGENT (RA) ---
+RA: loading dense retrieval model intfloat/e5-base-v2 on cpu...
+RA: loading corpus from data/pubmed.jsonl...
+RA: Re-ranking top 20 candidates with ColBERT-style scoring...
+RA: retrieved 8 documents (with re-ranking).
+--- (REAL) RUNNING GENERATION AGENT (GA) ---
+GA Generated Report (Pass 0): The patient is an elderly male smoker with a history of hemoptysis and weight loss. Imaging revealed a cavitary lesion in the left lung apex. Bronchoscopy and bronchoalveolar lavage led to the identification of Purpureocillium lilacinum infection. The patient was treated with oral voriconazole 200 mg twice daily for four weeks, with notable clinical and radiographic improvement.
+--- RUNNING SAFETY-VALIDATION AGENT (SVA) ---
+SVA: loading Bio_ClinicalBERT encoder...
+--- SVA PASSED (all sentences sufficiently supported) ---
+
+================ MEDRAG FINAL REPORT ================
+
+The patient is an elderly male smoker with a history of hemoptysis and weight loss. Imaging revealed a cavitary lesion in the left lung apex. Bronchoscopy and bronchoalveolar lavage led to the identification of Purpureocillium lilacinum infection. The patient was treated with oral voriconazole 200 mg twice daily for four weeks, with notable clinical and radiographic improvement.
+
+=====================================================
+
+--- Debug information ---
+Refinement count: 0
+# Retrieved docs: 8
+(.venv) (base) vedantb@GameTheory:~/MedRag-main$ 
